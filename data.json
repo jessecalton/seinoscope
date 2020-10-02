@@ -1,0 +1,67 @@
+{
+  "characters": {
+    "main": [
+      "Jerry Seinfeld",
+      "George Costanza",
+      "Elaine Benes",
+      "Cosmo Kramer"
+    ],
+    "secondary": [
+      "Newman",
+      "Frank Costanza",
+      "Estelle Costanza",
+      "David Puddy",
+      "Uncle Leo",
+      "Morty Seinfeld",
+      "Helen Seinfeld",
+      "Susan Ross",
+      "J. Peterman",
+      "Susan Ross",
+      "George Steinbrenner",
+      "Jackie Chiles"
+    ]
+  },
+  "quotes": {
+    "Jerry Seinfeld": [
+      "Looking at cleavage is like looking at the sun. You don't stare at it. It's too risky. Ya get a sense of it and then you look away.",
+      "I had a dream last night that a hamburger was eating me.",
+      "Boy, a little too much chlorine in that gene pool.",
+      "People don’t turn down money! It’s what separates us from the animals."
+    ],
+    "George Costanza": [
+      "It became very clear to me sitting out there today that every decision I've made in my entire life has been wrong. My life is the complete opposite of everything I want it to be. Every instinct I have, in every aspect of life, be it something to wear, something to eat - it's all been wrong.",
+      "Jerry, just remember, it's not a lie if you believe it.",
+      "Do you ever get down on your knees and thank God you know me and have access to my dementia?",
+      "You know I always wanted to pretend I was an architect.",
+      "I'm speechless. I have no speech.",
+      "I want to be the one person who doesn’t die with dignity.",
+      "I lie every second of the day. My whole life is a sham.",
+      "Hi, my name is George, I'm unemployed and I live with my parents.",
+      "The sea was angry that day, my friends, like an old man trying to send back soup in a deli…",
+      "Why does everything have to be ‘us’? Is there no ‘me’ left? Why can’t there be some things just for me? Is that so selfish?"
+    ],
+    "Elaine Benes": [
+      "I'm not a lesbian. I hate men, but I'm not a lesbian.",
+      "Fake! Fake! Fake! Fake!",
+      "What evidence is there that cats are so smart, anyway? Huh? What do they do? Because they’re clean? I am sorry. My Uncle Pete showers four times a day and he can’t count to ten. So don’t give me hygiene.",
+      "Yada yada yada.",
+      "Maybe the dingo ate your baby!",
+      "Three squares? You can’t spare three squares?",
+      "I don’t think George has ever thought he’s better than anybody.",
+      "I just couldn’t decide if he was really sponge-worthy.",
+      "I’ll go, if I don’t have to talk.",
+      "It’s the best part. It’s crunchy, it’s explosive, it’s where the muffin breaks free of the pan and sort of does its own thing. I’ll tell you. That’s a million-dollar idea right there. Just sell the tops."
+    ],
+    "Cosmo Kramer": [
+      "Boy, these pretzels are makin' me thirsty.",
+      "Quone. To quone something.",
+      "Do you have any idea how much time I waste in this apartment?",
+      "See, this is what the holidays are all about. Three buddies sitting around chewing gum.",
+      "Little Jerry Seinfeld. Yeah I named my chicken after you.",
+      "Somewhere in this hospital, the anguished squeal of Pigman cries out!",
+      "Well, you know what they say, you don’t sell the steak, you sell the sizzle.",
+      "The carpet sweeper is the biggest scam perpetrated on the American public since One Hour Martinizing.",
+      "You ever dream in 3-D? It’s like the bogeyman is coming RIGHT AT YOU."
+    ]
+  }
+}
