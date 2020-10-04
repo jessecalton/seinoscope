@@ -22,7 +22,9 @@ export default (state = initialState, action) => {
     case GET_SEINOSCOPE: {
       return {
         ...state,
-        mainCharacter: action.payload,
+        mainCharacter: action.payload.mainCharacter,
+        secondaryCharacter: action.payload.secondaryCharacter,
+        quote: action.payload.quote,
       };
     }
     default:

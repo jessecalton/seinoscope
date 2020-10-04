@@ -5,8 +5,8 @@ const seinoscope = require('./seinoscope');
 app.use(express.json());
 
 app.get('/api/seinoscope', async (req, res) => {
-  const mainCharacters = await seinoscope.getSign(req.query);
-  res.status(200).json({ mainCharacters });
+  const signReading = await seinoscope.getSign(req.query);
+  res.status(200).json({ signReading });
 });
 
 const PORT = process.env.PORT || 5000;

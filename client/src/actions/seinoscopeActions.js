@@ -16,7 +16,7 @@ export const setBirthdate = (birthDate) => {
 export const getSeinoscope = (birthDate) => async (dispatch) => {
   try {
     const res = await axios.get('/api/seinoscope', { params: birthDate });
-    dispatch({ type: GET_SEINOSCOPE, payload: res.data.mainCharacters });
+    dispatch({ type: GET_SEINOSCOPE, payload: res.data.signReading });
   } catch (error) {
     console.log(error);
   }
