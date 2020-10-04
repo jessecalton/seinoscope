@@ -1,15 +1,18 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import { setBirthdate } from '../actions/seinoscopeActions';
 
-const DatePicker = () => {
+const DatePicker = ({ setBirthdate }) => {
   const [years, setYears] = useState([]);
   const [days, setDays] = useState([]);
-  const [year, setYear] = useState(null);
+  const [year, setYear] = useState('');
   const [month, setMonth] = useState('January');
   const [day, setDay] = useState(1);
 
   useEffect(() => {
+    // Get the current year and set the default values for year selection dropdown
     const currentYear = new Date().getFullYear();
     getYears(currentYear);
     setYear(currentYear);
@@ -74,12 +77,14 @@ const DatePicker = () => {
     setDay(e.target.value);
   };
 
-  const onSubmit = () => {
+  const onSubmit = (e) => {
+    e.preventDefault();
     const dateOfBirth = {
       year,
       month,
       day,
     };
+    setBirthdate(dateOfBirth);
     console.log(dateOfBirth);
   };
 
@@ -97,7 +102,7 @@ const DatePicker = () => {
               value={year}
             >
               {years.map((year) => (
-                <option id={year} value={year}>
+                <option key={year} value={year}>
                   {year}
                 </option>
               ))}
@@ -112,7 +117,7 @@ const DatePicker = () => {
               value={month}
             >
               {monthMap.map((month) => (
-                <option id={month} value={month}>
+                <option key={month} value={month}>
                   {month}
                 </option>
               ))}
@@ -122,14 +127,14 @@ const DatePicker = () => {
             <Form.Label>Day</Form.Label>
             <Form.Control as='select' custom onChange={onDayChange} value={day}>
               {days.map((day) => (
-                <option id={day} value={day}>
+                <option key={day} value={day}>
                   {day}
                 </option>
               ))}
             </Form.Control>
           </Form.Group>
         </Form.Row>
-        <Button variant='primary' type='submit' OnClick={onSubmit}>
+        <Button variant='primary' type='submit' onClick={onSubmit}>
           Get My Seinoscope
         </Button>
       </Form>
@@ -137,4 +142,4 @@ const DatePicker = () => {
   );
 };
 
-export default DatePicker;
+export default connect(null, { setBirthdate })(DatePicker);
