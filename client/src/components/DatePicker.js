@@ -1,11 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 
 const DatePicker = () => {
   const [years, setYears] = useState([]);
   const [days, setDays] = useState([]);
   const [year, setYear] = useState(null);
   const [month, setMonth] = useState('January');
+  const [day, setDay] = useState(1);
 
   useEffect(() => {
     const currentYear = new Date().getFullYear();
@@ -47,9 +49,12 @@ const DatePicker = () => {
   // for a chosen month. Handles leap years.
   const getDaysInMonth = (newMonth, newYear) => {
     const selectedMonth = monthMap.indexOf(newMonth) + 1;
-    const days = new Date(newYear, selectedMonth, 0).getDate();
+    const newDays = new Date(newYear, selectedMonth, 0).getDate();
 
-    setDays([...Array(days + 1).keys()].slice(1));
+    setDays([...Array(newDays + 1).keys()].slice(1));
+    if (parseInt(day) > newDays) {
+      setDay(newDays);
+    }
   };
 
   // If new month is selected, updates available valid dates.
@@ -65,13 +70,32 @@ const DatePicker = () => {
     getDaysInMonth(month, e.target.value);
   };
 
+  const onDayChange = (e) => {
+    setDay(e.target.value);
+  };
+
+  const onSubmit = () => {
+    const dateOfBirth = {
+      year,
+      month,
+      day,
+    };
+    console.log(dateOfBirth);
+  };
+
   return (
     <div>
+      <h4>Enter date of birth</h4>
       <Form>
         <Form.Row>
           <Form.Group controlId='selectYear'>
             <Form.Label>Year</Form.Label>
-            <Form.Control as='select' custom onChange={onYearChange}>
+            <Form.Control
+              as='select'
+              custom
+              onChange={onYearChange}
+              value={year}
+            >
               {years.map((year) => (
                 <option id={year} value={year}>
                   {year}
@@ -81,7 +105,12 @@ const DatePicker = () => {
           </Form.Group>
           <Form.Group controlId='selectMonth'>
             <Form.Label>Month</Form.Label>
-            <Form.Control as='select' custom onChange={onMonthChange}>
+            <Form.Control
+              as='select'
+              custom
+              onChange={onMonthChange}
+              value={month}
+            >
               {monthMap.map((month) => (
                 <option id={month} value={month}>
                   {month}
@@ -91,7 +120,7 @@ const DatePicker = () => {
           </Form.Group>
           <Form.Group controlId='selectDay'>
             <Form.Label>Day</Form.Label>
-            <Form.Control as='select' custom>
+            <Form.Control as='select' custom onChange={onDayChange} value={day}>
               {days.map((day) => (
                 <option id={day} value={day}>
                   {day}
@@ -100,6 +129,9 @@ const DatePicker = () => {
             </Form.Control>
           </Form.Group>
         </Form.Row>
+        <Button variant='primary' type='submit' OnClick={onSubmit}>
+          Get My Seinoscope
+        </Button>
       </Form>
     </div>
   );

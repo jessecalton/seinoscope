@@ -3,10 +3,11 @@
 }
 
 .form-row {
-  margin: 0 auto;
+  margin: 30px auto;
   justify-content: center;
 }
 
 .form-group {
-  margin: 0 20px;
+  margin: 0 30px;
+  margin-top: 0;
 }
