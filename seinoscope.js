@@ -15,9 +15,13 @@ function getData() {
   });
 }
 
-async function getSign() {
+async function getSign(birthDate) {
   const data = await getData();
-  return data.characters.main;
+  const length = data.characters.main.length;
+  const mainCharacterIndex = Math.ceil(
+    ((new Date().getDate() * parseInt(birthDate.day) * 1.67) / length) % length
+  );
+  return data.characters.main[mainCharacterIndex];
 }
 
 module.exports = {
