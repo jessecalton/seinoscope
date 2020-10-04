@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import { setBirthdate } from '../actions/seinoscopeActions';
+import { setBirthdate, getSeinoscope } from '../actions/seinoscopeActions';
 
-const DatePicker = ({ setBirthdate }) => {
+const DatePicker = ({ setBirthdate, getSeinoscope }) => {
   const [years, setYears] = useState([]);
   const [days, setDays] = useState([]);
   const [year, setYear] = useState('');
@@ -85,6 +85,7 @@ const DatePicker = ({ setBirthdate }) => {
       day,
     };
     setBirthdate(dateOfBirth);
+    getSeinoscope(dateOfBirth);
     console.log(dateOfBirth);
   };
 
@@ -142,4 +143,4 @@ const DatePicker = ({ setBirthdate }) => {
   );
 };
 
-export default connect(null, { setBirthdate })(DatePicker);
+export default connect(null, { setBirthdate, getSeinoscope })(DatePicker);

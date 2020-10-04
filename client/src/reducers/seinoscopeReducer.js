@@ -19,6 +19,12 @@ export default (state = initialState, action) => {
         ...state,
         birthDate: action.payload,
       };
+    case GET_SEINOSCOPE: {
+      return {
+        ...state,
+        mainCharacter: action.payload,
+      };
+    }
     default:
       return state;
   }

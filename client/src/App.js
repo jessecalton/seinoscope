@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import store from './store';
 import DatePicker from './components/DatePicker';
 import About from './components/About';
+import Seinoscope from './components/Seinoscope';
 import './App.css';
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
       <div className='App'>
         <About />
         <DatePicker />
+        <Seinoscope />
       </div>
     </Provider>
   );

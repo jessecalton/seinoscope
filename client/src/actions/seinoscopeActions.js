@@ -1,3 +1,4 @@
+import axios from 'axios';
 import {
   GET_SEINOSCOPE,
   CLEAR_SEINOSCOPE,
@@ -10,4 +11,13 @@ export const setBirthdate = (birthDate) => {
     type: SET_BIRTHDATE,
     payload: birthDate,
   };
+};
+
+export const getSeinoscope = (birthDate) => async (dispatch) => {
+  try {
+    const res = await axios.get('/api/seinoscope');
+    dispatch({ type: GET_SEINOSCOPE, payload: res.data });
+  } catch (error) {
+    console.log(error);
+  }
 };
