@@ -11,3 +11,11 @@
   margin: 0 30px;
   margin-top: 0;
 }
+
+.main-character {
+  width: 500px;
+}
+
+.rounded-circle {
+  max-width: 200px;
+}

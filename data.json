@@ -14,12 +14,28 @@
       "Uncle Leo",
       "Morty Seinfeld",
       "Helen Seinfeld",
-      "Susan Ross",
       "J. Peterman",
       "Susan Ross",
       "George Steinbrenner",
       "Jackie Chiles"
-    ]
+    ],
+    "imageUrl": {
+      "Jerry Seinfeld": "assets/jerry.jpg",
+      "George Costanza": "assets/george.jpg",
+      "Elaine Benes": "assets/elaine.jpg",
+      "Cosmo Kramer": "assets/kramer.jpg",
+      "Newman": "assets/newman.jpg",
+      "Frank Costanza": "assets/frank.png",
+      "Estelle Costanza": "assets/estelle.png",
+      "David Puddy": "assets/puddy.jpg",
+      "Uncle Leo": "assets/leo.jpg",
+      "Morty Seinfeld": "assets/morty.jpg",
+      "Helen Seinfeld": "assets/helen.jpg",
+      "J. Peterman": "assets/peterman.jpg",
+      "Susan Ross": "assets/susan.jpg",
+      "George Steinbrenner": "assets/steinbrenner.jpeg",
+      "Jackie Chiles": "assets/jackie.jpg"
+    }
   },
   "quotes": {
     "Jerry Seinfeld": [

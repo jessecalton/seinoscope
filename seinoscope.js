@@ -33,15 +33,19 @@ async function getSign(birthDate) {
   data = await getData();
   const mainCharacter = getMainCharacter(day);
   const secondaryCharacter = getSecondaryCharacter(year, day);
-  const quote = getQuote(mainCharacter, month, day);
-  return { mainCharacter, secondaryCharacter, quote };
+  const quote = getQuote(mainCharacter.mainCharacter, month, day);
+  return { ...mainCharacter, secondaryCharacter, quote };
 }
 
 function getMainCharacter(day) {
   const length = data.characters.main.length;
   const characterIndex =
-    Math.ceil(new Date().getDate() * parseInt(day) * 1.67) % length;
-  return data.characters.main[characterIndex];
+    Math.floor(new Date().getDate() * parseInt(day) * 1.67) % length;
+  const mainCharacter = data.characters.main[characterIndex];
+  return {
+    mainCharacter: mainCharacter,
+    mainCharacterImage: data.characters.imageUrl[mainCharacter],
+  };
 }
 
 function getSecondaryCharacter(year, day) {

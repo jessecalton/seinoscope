@@ -10,6 +10,7 @@ const initialState = {
   secondaryCharacter: null,
   quote: null,
   episode: null,
+  mainCharacterImage: null,
 };
 
 export default (state = initialState, action) => {
@@ -25,6 +26,7 @@ export default (state = initialState, action) => {
         mainCharacter: action.payload.mainCharacter,
         secondaryCharacter: action.payload.secondaryCharacter,
         quote: action.payload.quote,
+        mainCharacterImage: action.payload.mainCharacterImage,
       };
     }
     default:
