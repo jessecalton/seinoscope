@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-family: 'Lato', sans-serif;
 }
 
 .form-row {
@@ -12,10 +13,78 @@
   margin-top: 0;
 }
 
+.DatePicker {
+  margin-bottom: 20px;
+}
+
 .main-character {
-  width: 500px;
+  width: 720px;
+  text-align: left;
+  /* this should effect "main-character container" class */
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  margin-right: 0;
+  margin-left: 0;
 }
 
 .rounded-circle {
   max-width: 200px;
+  transform: perspective(800px) rotateY(8deg);
+  transition: transform 1s ease 0s;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.024) 0px 0px 0px 1px,
+    rgba(0, 0, 0, 0.05) 0px 1px 0px 0px, rgba(0, 0, 0, 0.03) 0px 0px 8px 0px,
+    rgba(0, 0, 0, 0.1) 0px 20px 30px 0px;
+
+  &:hover {
+    transform: perspective(800px) rotateY(-4deg);
+  }
+}
+
+.quote {
+  margin: auto 10%;
+  margin-right: 0;
+}
+
+.secondary-character {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 0 auto;
+}
+
+.ascendant {
+  margin: 0 auto;
+}
+
+.secondary-character img {
+  width: 120px;
+}
+
+.seinoscope-container {
+  display: flex;
+  margin: auto 0;
+  margin-left: 250px;
+}
+
+/* Starry night background */
+.jumbotron {
+  color: white;
+  background-color: black;
+  background-image: radial-gradient(
+      white,
+      rgba(255, 255, 255, 0.2) 2px,
+      transparent 40px
+    ),
+    radial-gradient(white, rgba(255, 255, 255, 0.15) 1px, transparent 30px),
+    radial-gradient(white, rgba(255, 255, 255, 0.1) 2px, transparent 40px),
+    radial-gradient(
+      rgba(255, 255, 255, 0.4),
+      rgba(255, 255, 255, 0.1) 2px,
+      transparent 30px
+    );
+  background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+  background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
 }

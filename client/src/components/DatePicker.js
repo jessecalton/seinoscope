@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Fragment } from 'react';
 import { connect } from 'react-redux';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
@@ -90,7 +90,7 @@ const DatePicker = ({ setBirthdate, getSeinoscope }) => {
   };
 
   return (
-    <div>
+    <div className='DatePicker'>
       <h4>Enter date of birth</h4>
       <Form>
         <Form.Row>

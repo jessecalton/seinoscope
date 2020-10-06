@@ -27,6 +27,7 @@ export default (state = initialState, action) => {
         secondaryCharacter: action.payload.secondaryCharacter,
         quote: action.payload.quote,
         mainCharacterImage: action.payload.mainCharacterImage,
+        secondaryCharacterImage: action.payload.secondaryCharacterImage,
       };
     }
     default:
