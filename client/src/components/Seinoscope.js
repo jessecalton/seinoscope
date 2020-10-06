@@ -11,6 +11,7 @@ const Seinoscope = ({
     quote,
     secondaryCharacter,
     mainCharacterImage,
+    secondaryCharacterImage,
   },
 }) => {
   if (birthDate === null || mainCharacterImage === null) {
@@ -19,13 +20,23 @@ const Seinoscope = ({
     return (
       <Fragment>
         <Jumbotron>
-          <h3>You are {mainCharacter}</h3>
-          <Container className='main-character'>
-            <Image src={require(`../${mainCharacterImage}`)} roundedCircle />
+          <h3>Today, You are {mainCharacter}</h3>
+          <Container className='seinoscope-container'>
+            <Container className='main-character'>
+              <Image src={require(`../${mainCharacterImage}`)} roundedCircle />
+              <h3 className='quote'>"{quote}"</h3>
+            </Container>
+            <div className='secondary-character'>
+              <h6 className='ascendant'>
+                With an ascendant {secondaryCharacter}
+              </h6>
+              <Image
+                src={require(`../${secondaryCharacterImage}`)}
+                roundedCircle
+              />
+            </div>
           </Container>
         </Jumbotron>
-        <p>{quote}</p>
-        <p>With an ascendant {secondaryCharacter}</p>
       </Fragment>
     );
   }
