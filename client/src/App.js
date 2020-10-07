@@ -5,6 +5,7 @@ import store from './store';
 import DatePicker from './components/DatePicker';
 import About from './components/About';
 import Seinoscope from './components/Seinoscope';
+import Episode from './components/Episode';
 import './App.css';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <About />
         <DatePicker />
         <Seinoscope />
+        <Episode />
       </div>
     </Provider>
   );

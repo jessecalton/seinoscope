@@ -1,10 +1,5 @@
 import axios from 'axios';
-import {
-  GET_SEINOSCOPE,
-  CLEAR_SEINOSCOPE,
-  SET_BIRTHDATE,
-  CLEAR_BIRTHDATE,
-} from './types';
+import { GET_SEINOSCOPE, CLEAR_SEINOSCOPE, SET_BIRTHDATE } from './types';
 
 export const setBirthdate = (birthDate) => {
   return {
@@ -13,7 +8,14 @@ export const setBirthdate = (birthDate) => {
   };
 };
 
+export const clearSeinoscope = () => {
+  return {
+    type: CLEAR_SEINOSCOPE,
+  };
+};
+
 export const getSeinoscope = (birthDate) => async (dispatch) => {
+  clearSeinoscope();
   try {
     const res = await axios.get('/api/seinoscope', { params: birthDate });
     dispatch({ type: GET_SEINOSCOPE, payload: res.data.signReading });

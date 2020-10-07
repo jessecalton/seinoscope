@@ -28,6 +28,18 @@ export default (state = initialState, action) => {
         quote: action.payload.quote,
         mainCharacterImage: action.payload.mainCharacterImage,
         secondaryCharacterImage: action.payload.secondaryCharacterImage,
+        episode: action.payload.episode,
+      };
+    }
+    case CLEAR_SEINOSCOPE: {
+      return {
+        ...state,
+        birthDate: null,
+        mainCharacter: null,
+        secondaryCharacter: null,
+        quote: null,
+        episode: null,
+        mainCharacterImage: null,
       };
     }
     default:

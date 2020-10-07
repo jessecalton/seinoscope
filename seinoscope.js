@@ -1,5 +1,7 @@
 const fs = require('fs');
+const csv = require('csv-parser');
 let data;
+let episodes = [];
 const monthMap = [
   'January',
   'February',
@@ -28,20 +30,34 @@ function getData() {
   });
 }
 
+function getEpisodeData() {
+  return new Promise((resolve, reject) => {
+    fs.createReadStream('episodes.csv')
+      .pipe(csv())
+      .on('data', (data) => episodes.push(data))
+      .on('end', () => {
+        resolve(episodes);
+      });
+    // todo: error handling
+  });
+}
+
+// Parses through data.json to retrieve seinoscope values
 async function getSign(birthDate) {
   const { day, month, year } = birthDate;
   data = await getData();
+  await getEpisodeData();
+  const episode = getEpisode(month, day, year);
   const mainCharacter = getMainCharacter(day);
   const secondaryCharacter = getSecondaryCharacter(year, day);
   const quote = getQuote(mainCharacter.mainCharacter, month, day);
-  return { ...mainCharacter, ...secondaryCharacter, quote };
+  return { ...mainCharacter, ...secondaryCharacter, quote, episode };
 }
 
 function getMainCharacter(day) {
   const length = data.characters.main.length;
   const characterIndex =
     Math.floor(new Date().getDate() ^ (parseInt(day) * 1.67)) % length;
-  console.log(characterIndex);
   const mainCharacter = data.characters.main[characterIndex];
   return {
     mainCharacter: mainCharacter,
@@ -49,12 +65,11 @@ function getMainCharacter(day) {
   };
 }
 
+// Tested and verified randomness
 function getSecondaryCharacter(year, day) {
   const length = data.characters.secondary.length;
   const characterIndex =
-    Math.ceil(
-      new Date().getFullYear() ^ (parseInt(day) * parseInt(year) * 1.67)
-    ) % length;
+    ((new Date().getMonth() + 1) * (parseInt(year) * parseInt(day))) % length;
   const secondaryCharacter = data.characters.secondary[characterIndex];
   return {
     secondaryCharacter: secondaryCharacter,
@@ -67,9 +82,15 @@ function getQuote(mainCharacter, month, day) {
   const length = quoteList.length;
 
   const quoteIndex =
-    Math.ceil(parseInt(monthMap.indexOf(month) + 1) * parseInt(day) * 1.67) %
-    length;
+    (parseInt(monthMap.indexOf(month) + 1) * parseInt(day)) % length;
   return quoteList[quoteIndex];
+}
+
+function getEpisode(month, day, year) {
+  const length = episodes.length;
+  const episodeIndex =
+    (parseInt(monthMap.indexOf(month) + 1) * year * parseInt(day)) % length;
+  return episodes[episodeIndex];
 }
 
 module.exports = {
