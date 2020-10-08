@@ -3,6 +3,8 @@
   font-family: 'Lato', sans-serif;
 }
 
+/* DatePicker Component */
+
 .form-row {
   margin: 30px auto;
   justify-content: center;
@@ -17,40 +19,28 @@
   margin-bottom: 20px;
 }
 
-.Episode {
-  width: 400px;
+/* Seinoscope and Character components */
+
+.character-container {
   display: flex;
+  margin: auto 0;
+  align-items: center;
   flex-direction: column;
 }
 
-.episode-header {
-  margin-bottom: 20px;
+.seinoscope-container {
+  display: flex;
 }
 
 .main-character {
   width: 720px;
-  text-align: left;
-  /* this should effect "main-character container" class */
+  text-align: center;
   display: flex;
   flex-direction: row;
   margin-top: 20px;
   margin-right: 0;
   margin-left: 0;
   align-items: center;
-}
-
-.rounded-circle {
-  max-width: 200px;
-  transform: perspective(800px) rotateY(8deg);
-  transition: transform 1s ease 0s;
-  border-radius: 4px;
-  box-shadow: rgba(0, 0, 0, 0.024) 0px 0px 0px 1px,
-    rgba(0, 0, 0, 0.05) 0px 1px 0px 0px, rgba(0, 0, 0, 0.03) 0px 0px 8px 0px,
-    rgba(0, 0, 0, 0.1) 0px 20px 30px 0px;
-
-  &:hover {
-    transform: perspective(800px) rotateY(-4deg);
-  }
 }
 
 .quote {
@@ -70,22 +60,26 @@
 
 .ascendant {
   margin: 30px;
+  font-size: 20px;
 }
 
 .secondary-character img {
   width: 120px;
 }
 
-.character-container {
-  display: flex;
-  margin: auto 0;
-  align-items: center;
-  flex-direction: column;
+/* Rounded images bootstrap component */
+.rounded-circle {
+  max-width: 200px;
+  transform: perspective(800px) rotateY(8deg);
+  transition: transform 1s ease 0s;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.024) 0px 0px 0px 1px,
+    rgba(0, 0, 0, 0.05) 0px 1px 0px 0px, rgba(0, 0, 0, 0.03) 0px 0px 8px 0px,
+    rgba(0, 0, 0, 0.1) 0px 20px 30px 0px;
 }
 
-.seinoscope-container {
-  display: flex;
-  justify-content: space-between;
+.rounded-circle:hover {
+  transform: perspective(800px) rotateY(-4deg);
 }
 
 /* Starry night background */
@@ -106,6 +100,18 @@
     );
   background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
   background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+}
+
+/* Episode component */
+
+.Episode {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.episode-header {
+  margin-bottom: 20px;
 }
 
 /* VHS */

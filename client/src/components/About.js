@@ -7,7 +7,7 @@ const About = () => {
     <Jumbotron fluid>
       <Container>
         <h1>Seinoscope</h1>
-        <p>An app about nothing.</p>
+        <p>An app about nothing</p>
       </Container>
     </Jumbotron>
   );
