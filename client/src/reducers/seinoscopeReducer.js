@@ -2,6 +2,7 @@ import {
   GET_SEINOSCOPE,
   CLEAR_SEINOSCOPE,
   SET_BIRTHDATE,
+  SEINOSCOPE_ERROR,
 } from '../actions/types';
 
 const initialState = {
@@ -11,6 +12,7 @@ const initialState = {
   quote: null,
   episode: null,
   mainCharacterImage: null,
+  error: null,
 };
 
 export default (state = initialState, action) => {
@@ -40,6 +42,12 @@ export default (state = initialState, action) => {
         quote: null,
         episode: null,
         mainCharacterImage: null,
+      };
+    }
+    case SEINOSCOPE_ERROR: {
+      return {
+        ...state,
+        error: action.payload,
       };
     }
     default:

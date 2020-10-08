@@ -87,7 +87,6 @@ const DatePicker = ({ setBirthdate, getSeinoscope }) => {
     };
     setBirthdate(dateOfBirth);
     getSeinoscope(dateOfBirth);
-    console.log(dateOfBirth);
   };
 
   return (

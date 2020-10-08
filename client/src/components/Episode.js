@@ -6,12 +6,21 @@ const Episode = ({ seinoscope: { episode } }) => {
     return null;
   } else {
     return (
-      <div>
-        <h3>An episode deserving your attention:</h3>
-        <p>
-          Season {episode.Season} Episode {episode.Episode}
-        </p>
-        <p>{episode.Title}</p>
+      <div className='Episode'>
+        <h3 className='episode-header'>Your Special Episode</h3>
+        <div className='vhs-body'>
+          <div className='vhs'>
+            <span className='dyan'>Seinfeld</span>
+            <span className='dyan'>
+              Season {episode.Season} Episode {episode.Episode}
+            </span>
+            <span className='dyan'>{episode.Title}</span>
+            <div className='footer'>
+              <span className='footer-vhs'>VHS</span>
+              <span className='footer-vid'>VIDEO CASSETTE</span>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
