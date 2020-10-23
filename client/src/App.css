@@ -3,6 +3,11 @@
   font-family: 'Lato', sans-serif;
 }
 
+a {
+  color: #fff;
+  text-decoration: underline;
+}
+
 /* DatePicker Component */
 
 .form-row {
@@ -16,7 +21,22 @@
 }
 
 .DatePicker {
-  margin-bottom: 20px;
+  margin: 20px 0;
+}
+
+.seinoscope-button:active,
+.seinoscope-button:focus,
+.seinoscope-button:active:focus,
+.seinoscope-button:not(:disabled):not(.disabled):active:focus {
+  box-shadow: 0 0 black;
+}
+
+.seinoscope-button:active {
+  transform: scale(0.98);
+}
+/* btn-primary:not(:disabled):not(.disabled):active:focus */
+.btn-primary:not(:disabled):not(.disabled):active:focus {
+  box-shadow: 0;
 }
 
 /* Seinoscope and Character components */
@@ -84,6 +104,9 @@
 
 /* Starry night background */
 .jumbotron {
+  margin-bottom: 0;
+  animation-name: jumbotronload;
+  animation-duration: 1s;
   color: white;
   background-color: black;
   background-image: radial-gradient(
@@ -112,6 +135,17 @@
 
 .episode-header {
   margin-bottom: 20px;
+}
+
+/* opacity starts at 0 and ends with 1 */
+@keyframes jumbotronload {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 /* VHS */
@@ -234,4 +268,58 @@
 .footer-vid {
   font-size: 12px;
   letter-spacing: 0;
+}
+
+/* Media queries */
+@media (max-width: 980px) {
+  .seinoscope-container,
+  .main-character {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main-character {
+    margin: 10%;
+  }
+
+  .quote {
+    margin: 5%;
+    font-size: 1.5rem;
+  }
+
+  .secondary-character {
+    margin-bottom: 20px;
+    margin-top: 0;
+    justify-content: center;
+  }
+
+  .Episode {
+    width: 100%;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form-row {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .form-group {
+    flex-basis: 100%;
+  }
+
+  .vsh {
+    width: 60%;
+  }
+
+  .vhs:after {
+    width: 15%;
+    height: 15%;
+  }
 }

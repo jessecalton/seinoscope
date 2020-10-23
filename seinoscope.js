@@ -69,7 +69,9 @@ function getMainCharacter(day) {
 function getSecondaryCharacter(year, day) {
   const length = data.characters.secondary.length;
   const characterIndex =
-    ((new Date().getMonth() + 1) * (parseInt(year) * parseInt(day))) % length;
+    ((new Date().getDate() ^ 1.67) *
+      ((parseInt(year) * parseInt(day)) ^ 1.67)) %
+    length;
   const secondaryCharacter = data.characters.secondary[characterIndex];
   return {
     secondaryCharacter: secondaryCharacter,

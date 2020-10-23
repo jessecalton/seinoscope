@@ -135,7 +135,12 @@ const DatePicker = ({ setBirthdate, getSeinoscope }) => {
             </Form.Control>
           </Form.Group>
         </Form.Row>
-        <Button variant='primary' type='submit' onClick={onSubmit}>
+        <Button
+          className='seinoscope-button'
+          variant='primary'
+          type='submit'
+          onClick={onSubmit}
+        >
           Get My Seinoscope
         </Button>
       </Form>
